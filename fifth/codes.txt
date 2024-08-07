@@ -1,0 +1,168 @@
+
+1)# Alternative code to print the entered number
+number = input("Enter a number: ")
+print(f"Output: {number}")
+
+
+2)# Alternative code to check if the number is divisible by 3 and 4
+number = int(input("Enter a number: "))
+output = "Yes" if number % 3 == 0 and number % 4 == 0 else "No"
+print(f"Output: {output}")
+
+
+3)# Alternative code to print the maximum of two integers
+num1, num2 = map(int, input("Enter two numbers: ").split())
+print(f"Output: {num1 if num1 > num2 else num2}")
+
+
+4)# Alternative code to check if the number is negative or positive
+number = int(input("Enter a number: "))
+print("Output:", "negative" if number < 0 else "positive")
+
+
+5)# Alternative code to print the maximum and minimum of three integers
+numbers = list(map(int, input("Enter three numbers: ").split()))
+print(f"max element = {max(numbers)}")
+print(f"min element = {min(numbers)}")
+
+
+6)# Alternative code to check if the number is even or odd
+number = int(input("Enter a number: "))
+print(f"Output: {'even' if number % 2 == 0 else 'odd'}")
+
+
+7)# Alternative code to check if the character is a vowel or consonant
+char = input("Enter a character: ").lower()
+print("Output:", "vowel" if char in 'aeiou' else "consonant")
+
+
+8)# Alternative code to print all numbers between 1 and the entered number
+number = int(input("Enter a number: "))
+print("Output:", ", ".join(map(str, range(1, number + 1))))
+
+
+9)# Alternative code to print the multiplication table up to 12
+number = int(input("Enter a number: "))
+print("Output:", " ".join(str(number * i) for i in range(1, 13)))
+
+
+10)# Alternative code to print all even numbers between 1 and the entered number
+number = int(input("Enter a number: "))
+print("Output:", " ".join(map(str, range(2, number + 1, 2))))
+
+
+11)# Alternative code to calculate the power of two numbers
+base, exponent = map(int, input("Enter the base and exponent numbers: ").split())
+print(f"Output: {base ** exponent}")
+
+
+12)# Alternative code to calculate total, average, and percentage of five subjects
+marks = [int(input(f"Enter marks for subject {i+1}: ")) for i in range(5)]
+total = sum(marks)
+average = total / len(marks)
+percentage = (total / 500) * 100
+print(f"Total marks = {total}\nAverage marks = {average}\nPercentage = {percentage}")
+
+
+13)# Alternative code to print the number of days in a month
+month = int(input("Enter month number: "))
+days = 31 if month in [1, 3, 5, 7, 8, 10, 12] else 30 if month in [4, 6, 9, 11] else "28 or 29"
+print(f"Days in Month: {days}")
+
+
+14)# Alternative code to calculate percentage and grade for five subjects
+subjects = ["Physics", "Chemistry", "Biology", "Mathematics", "Computer"]
+marks = [int(input(f"Enter marks for {subject}: ")) for subject in subjects]
+total = sum(marks)
+percentage = (total / 500) * 100
+grade = ('A' if percentage >= 90 else 'B' if percentage >= 80 else 'C' if percentage >= 70 else 'D' if percentage >= 60 else 'E' if percentage >= 40 else 'F')
+print(f"Percentage = {percentage}\nGrade = {grade}")
+
+
+15)# Alternative code to print total number of days in a month using match-case
+month = int(input("Enter month number: "))
+match month:
+    case 2:
+        days = "28 or 29"
+    case 4 | 6 | 9 | 11:
+        days = 30
+    case _:
+        days = 31
+print(f"Days in Month: {days}")
+
+
+16)# Alternative code to check whether an alphabet is vowel or consonant using match-case
+char = input("Enter a character: ").lower()
+match char:
+    case 'a' | 'e' | 'i' | 'o' | 'u':
+        output = "vowel"
+    case _:
+        output = "consonant"
+print(f"Output: {output}")
+
+
+17)# Alternative code to find maximum between two numbers using match-case
+num1, num2 = map(int, input("Enter two numbers: ").split())
+match (num1 > num2):
+    case True:
+        max_num = num1
+    case False:
+        max_num = num2
+print(f"Output: {max_num}")
+
+
+18)# Alternative code to check whether a number is even or odd using match-case
+number = int(input("Enter a number: "))
+match (number % 2 == 0):
+    case True:
+        output = "even"
+    case False:
+        output = "odd"
+print(f"Output: {output}")
+
+
+19)# Alternative code to check whether a number is positive, negative, or zero using match-case
+number = int(input("Enter a number: "))
+match number:
+    case n if n > 0:
+        output = "positive"
+    case n if n < 0:
+        output = "negative"
+    case _:
+        output = "zero"
+print(f"Output: {output}")
+
+
+20)# Alternative code to create Simple Calculator using match-case
+def calculator():
+    def add(x, y): return x + y
+    def subtract(x, y): return x - y
+    def multiply(x, y): return x * y
+    def divide(x, y): return x / y
+
+    operations = {
+        '1': add,
+        '2': subtract,
+        '3': multiply,
+        '4': divide
+    }
+
+    print("Select operation:\n1. Add\n2. Subtract\n3. Multiply\n4. Divide")
+    choice = input("Enter choice (1/2/3/4): ")
+    num1, num2 = map(float, input("Enter two numbers: ").split())
+
+    match choice:
+        case '1' | '2' | '3' | '4':
+            result = operations[choice](num1, num2)
+            print(f"Result: {result}")
+        case _:
+            print("Invalid input")
+
+calculator()
+
+
+
+
+
+
+
